@@ -11,6 +11,7 @@ import { WishesScene } from "@/components/scenes/WishesScene";
 import { PrankScene } from "@/components/scenes/PrankScene";
 import { WishScene } from "@/components/scenes/WishScene";
 import { FinalScene } from "@/components/scenes/FinalScene";
+import { birthday } from "@/content/birthday";
 import { cn } from "@/lib/utils";
 
 export const SCENE_COUNT = 9;
@@ -19,6 +20,24 @@ const LABELS = ["Cover", "Hello", "You", "Basera", "Note", "Wishes", "Gift", "Ca
 export function Scrapbook() {
   const [scene, setScene] = useState(0);
   const [dir, setDir] = useState(1);
+
+  useEffect(() => {
+    // Preload all scrapbook photos silently in the background
+    const list: (string | undefined)[] = [
+      birthday.intro.photo?.src,
+      ...birthday.sides.items.map((it) => it.photo?.src),
+      birthday.team.main?.src,
+      ...(birthday.team.extras ?? []).map((e) => e.src),
+      birthday.note.photo?.src,
+      birthday.wishes.photo?.src,
+      birthday.final.photo?.src,
+    ];
+    list.forEach((src) => {
+      if (!src) return;
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
 
   const go = useCallback((n: number) => {
     const next = Math.max(0, Math.min(SCENE_COUNT - 1, n));

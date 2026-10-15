@@ -29,7 +29,15 @@ export function Art({ kind, className, style }: { kind: keyof typeof ART; classN
 
 export function PhotoFill({ photo, className }: { photo: Photo; className?: string }) {
   if (photo.src) {
-    return <img src={photo.src} alt={photo.alt} className={cn("h-full w-full object-cover", className)} />;
+    return (
+      <img
+        src={photo.src}
+        alt={photo.alt}
+        loading="eager"
+        decoding="async"
+        className={cn("h-full w-full object-cover", className)}
+      />
+    );
   }
   return (
     <div
