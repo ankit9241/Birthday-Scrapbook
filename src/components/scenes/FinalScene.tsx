@@ -16,18 +16,15 @@ export function FinalScene({ onReplay, onMemories }: { onReplay: () => void; onM
       <Art kind="corner" className="-left-4 -top-4 hidden w-40 -scale-y-100 lg:block" />
       <Art kind="corner" className="-bottom-4 -right-4 hidden w-40 -scale-x-100 lg:block" />
 
-      <div className="relative mx-auto grid w-full max-w-md grid-cols-2 gap-x-2 gap-y-6">
-        {f.photos.map((p, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 + i * 0.2 }}
-            className={i % 2 ? "mt-10" : ""}
-          >
-            <Polaroid photo={p} rotate={ROT[i] ?? 0} />
-          </motion.div>
-        ))}
+      <div className="relative mx-auto flex w-full max-w-sm justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="w-64 sm:w-72"
+        >
+          <Polaroid photo={f.photo ?? f.photos[0]!} rotate={-2} aspect="aspect-[4/5]" tape="top" />
+        </motion.div>
       </div>
 
       <div className="relative text-center lg:text-left">

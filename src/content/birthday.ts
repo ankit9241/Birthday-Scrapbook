@@ -15,35 +15,38 @@ export const birthday = {
   cover: {
     line1: "Happy Birthday",
     line2: "ANSHIKA!",
-    sub: "A little something, made just for you.",
+    sub: "A little surprise, just for you.",
     cta: "click to open",
   },
 
   intro: {
     heading: "Dear Anshika,",
     lines: [
-      "Aaj no deadlines, no work discussions,",
-      "no ‘ek minute, ek cheez check karna’.",
+      "Aaj no deadlines, no serious talks, no random responsibilities.",
       "Bas aaj ka din tumhare naam.",
-      "So sit back, and let us make a little noise for you.",
+      "Toh relax, enjoy the little surprises, and don't judge the amount of effort that went into this.",
+      "(Okay, maybe judge a little.)",
     ],
-    photo: { alt: "Anshika", label: "a favourite photo", memory: "The birthday girl herself." } as Photo,
+    photo: { alt: "Anshika", label: "the birthday girl", memory: "The birthday girl herself." } as Photo,
   },
 
   sides: {
     heading: "A few things that make you, you.",
     items: [
-      { caption: "The Smile", line: "The kind that makes an ordinary moment better.", photo: { alt: "Anshika smiling" } as Photo },
-      { caption: "The Chaos", line: "Because peace and quiet were never the whole plan.", photo: { alt: "Anshika, candid" } as Photo },
-      { caption: "The Sunshine", line: "Bringing your own little energy into the room.", photo: { alt: "Anshika outdoors" } as Photo },
-      { caption: "The Strong One", line: "Handling more than people probably realise.", photo: { alt: "Anshika" } as Photo },
-      { caption: "The Original", line: "No replacement. No duplicate. Just Anshika.", photo: { alt: "Anshika portrait" } as Photo },
+      { caption: "The Smile", line: "Okay, fine. This one deserves its own spot.", photo: { alt: "The Smile" } as Photo },
+      { caption: "The Chaos", line: "Because apparently, normal is a little too boring.", photo: { alt: "The Chaos" } as Photo },
+      { caption: "The Sunshine", line: "Being effortlessly photogenic is a bit unfair, honestly.", photo: { alt: "The Sunshine" } as Photo },
+      { caption: "The Strong One", line: "Handling life like a pro. Complaining about it is optional.", photo: { alt: "The Strong One" } as Photo },
+      { caption: "The Original", line: "One of one. No duplicates available.", photo: { alt: "The Original" } as Photo },
     ],
   },
 
   team: {
     heading: "Different screens. Same madness.",
-    body: "We may work from different places, but somehow the random conversations, unexpected chaos and little moments find their way into every workday.",
+    body: [
+      "Alag-alag jagah se kaam karte hain, but somehow random conversations, unexpected chaos aur beech-beech ki bakchodi workday ka part ban hi jaati hai.",
+      "And somewhere between all that, we actually get things done. Miracles happen.",
+    ],
     notes: ["Work mode: allegedly ON", "One quick discussion = 45 minutes", "Somehow, we get things done."],
     main: { alt: "The Basera group", label: "team photo", memory: "The Basera gang, somehow all in one frame." } as Photo,
     extras: [{ alt: "Anshika", label: "portrait" }, { alt: "Video call", label: "screenshot" }] as Photo[],
@@ -56,9 +59,10 @@ export const birthday = {
     paragraphs: [
       "Hey Anshika,",
       "Wishing you a very happy birthday!",
-      "It's genuinely nice having you as part of the Basera gang. Hope this year brings you lots of happiness, exciting opportunities, good memories, and plenty of reasons to smile.",
-      "Keep being yourself, keep doing your thing, and don't let the work chaos steal all your fun.",
-      "Have the best day. You deserve it!",
+      "It's genuinely nice having you as part of the team. From random conversations to all the little moments in between, it's always nice when work becomes a little more fun because of the people around you.",
+      "Hope this year brings you lots of happiness, exciting opportunities, good memories, new adventures, and plenty of reasons to smile.",
+      "Keep being yourself, keep doing your thing, and don't let the everyday chaos steal all your fun.",
+      "Here's to a year full of good surprises, happy moments, and things that make you genuinely excited. Hope you have the best birthday — you deserve it!",
     ],
     signature: "— Ankit",
     photo: { alt: "Anshika", label: "small photo" } as Photo,
@@ -68,16 +72,16 @@ export const birthday = {
     heading: "Things we're wishing for you.",
     photo: { alt: "Anshika", label: "centre photo" } as Photo,
     items: [
-      { title: "More happy days", line: "The kind you wish could last a little longer." },
-      { title: "More adventures", line: "New places, new stories, better photographs." },
-      { title: "More wins", line: "Big achievements and tiny victories, too." },
-      { title: "Less stress", line: "Because you've earned a break from all the chaos." },
+      { title: "More happy days", line: "I hope you find happiness in the little things, get more reasons to laugh, and have people around who make even an ordinary day feel special." },
+      { title: "More adventures", line: "More places to explore, more new things to try, and more stories that start with ‘Okay, so guess what happened…’" },
+      { title: "More wins", line: "I hope all the effort you put into things takes you somewhere amazing, and that you get to celebrate every little win along the way." },
+      { title: "Less stress", line: "Less overthinking, fewer unnecessary worries, more peaceful days — and absolutely no guilt about taking a break when you need one." },
     ],
     flaps: [
-      { label: "A little reminder", message: "You've got plenty of good things ahead." },
-      { label: "Open for a laugh", message: "May your meetings be short and your snacks be unlimited." },
-      { label: "A birthday wish", message: "More adventures, more memories, and more reasons to smile." },
-      { label: "One last thing", message: "Don't forget to enjoy your own birthday." },
+      { label: "A little reminder", message: "You don't need to have everything figured out. You're allowed to take your time, too." },
+      { label: "Open for a laugh", message: "May your plans work out, your food arrive hot, and your ‘just five more minutes’ actually be five minutes." },
+      { label: "A birthday wish", message: "I hope this next chapter brings you people worth keeping, moments worth remembering, and opportunities worth getting excited about." },
+      { label: "One last thing", message: "Birthday rule: no feeling guilty about relaxing, no worrying about tomorrow. Today is yours, so enjoy it properly." },
     ],
   },
 
@@ -92,7 +96,7 @@ export const birthday = {
       "Your actual gift is a whole website made just for your birthday.",
       "Happy Birthday, Anshika!",
     ],
-    signature: "— A little surprise from your Basera gang",
+    signature: "— A little surprise from your friends",
     next: "OKAY, NOW SHOW ME THE CAKE",
   },
 
@@ -112,6 +116,7 @@ export const birthday = {
     tab: "P.S. Who put all this together?",
     reveal: ["A little something by Ankit.", "Hope this made you smile. Have a wonderful birthday!"],
     signature: "— Ankit",
-    photos: [{ alt: "Anshika" }, { alt: "Anshika" }, { alt: "Anshika" }, { alt: "Basera group" }] as Photo[],
+    photo: { alt: "Anshika", label: "memories" } as Photo,
+    photos: [{ alt: "Anshika", label: "memories" }] as Photo[],
   },
 };

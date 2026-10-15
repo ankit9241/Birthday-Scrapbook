@@ -22,7 +22,7 @@ function Note({ i, title, line }: { i: number; title: string; line: string }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 + i * 0.2 }}
       className={cn(
-        "group relative h-48 w-full max-w-[16.5rem] cursor-pointer lg:absolute lg:w-64 outline-none transition-transform hover:scale-[1.04] hover:z-20",
+        "group relative h-56 sm:h-60 w-full max-w-[17.5rem] cursor-pointer lg:absolute lg:w-72 outline-none transition-transform hover:scale-[1.03] hover:z-20",
         s.pos,
       )}
       style={{ perspective: 900, rotate: s.rot }}
@@ -43,7 +43,7 @@ function Note({ i, title, line }: { i: number; title: string; line: string }) {
           )}
         >
           <Tape className="-top-2 left-6 w-14 -rotate-6" />
-          <span className="font-script text-3xl sm:text-4xl text-navy pt-2 text-center leading-tight">
+          <span className="font-script text-3xl sm:text-4xl text-navy pt-3 text-center leading-tight">
             {title}
           </span>
           <span className="inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-3.5 py-1 font-sans text-xs font-semibold tracking-wider text-navy border border-navy/25 group-hover:border-navy/50 group-hover:scale-105 transition-all">
@@ -52,12 +52,12 @@ function Note({ i, title, line }: { i: number; title: string; line: string }) {
         </div>
         <div
           className={cn(
-            "absolute inset-0 flex flex-col items-center justify-between p-5 pb-4 shadow-paper [backface-visibility:hidden] [transform:rotateY(180deg)] border border-navy/15 rounded-sm",
+            "absolute inset-0 flex flex-col items-center justify-between p-4 pb-3.5 shadow-paper [backface-visibility:hidden] [transform:rotateY(180deg)] border border-navy/15 rounded-sm",
             s.paper,
           )}
         >
           <Tape className="-top-2 right-6 w-14 rotate-6" />
-          <span className="my-auto font-hand text-2xl leading-snug text-ink text-center">
+          <span className="my-auto font-hand text-xl sm:text-2xl leading-snug text-ink text-center px-1">
             {line}
           </span>
           <span className="inline-flex items-center rounded-full bg-paper-soft/80 px-3 py-0.5 font-sans text-[10px] font-medium tracking-widest text-slate border border-slate/20">
@@ -78,12 +78,12 @@ function PaperFlap({ i, label, message }: { i: number; label: string; message: s
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 1.1 + i * 0.15 }}
-      className="group relative w-full max-w-[15rem]"
+      className="group relative w-full max-w-[16rem]"
       style={{ rotate: FLAP_ROT[i % FLAP_ROT.length] ?? 0, perspective: 900 }}
     >
       <Tape className="-top-2 left-1/2 z-20 w-12 -translate-x-1/2 rotate-2" />
-      <div className="stationery relative min-h-36 px-5 pb-5 pt-12 text-center border border-navy/10">
-        <p className="font-hand text-2xl leading-snug text-ink" aria-hidden={!open}>
+      <div className="stationery relative min-h-44 sm:min-h-48 px-4 pb-4 pt-11 text-center border border-navy/10 flex items-center justify-center">
+        <p className="font-hand text-xl sm:text-2xl leading-snug text-ink" aria-hidden={!open}>
           {open ? message : ""}
         </p>
       </div>
@@ -116,7 +116,7 @@ export function WishesScene() {
   return (
     <div className="relative mx-auto max-w-5xl px-4 py-10">
       <SceneHeading className="text-center">{w.heading}</SceneHeading>
-      <div className="relative mt-10 flex flex-col items-center gap-8 lg:h-[520px] lg:block">
+      <div className="relative mt-10 flex flex-col items-center gap-8 lg:h-[560px] lg:block">
         <Art kind="corner" className="left-1/2 top-1/2 hidden w-[420px] -translate-x-1/2 -translate-y-1/2 opacity-20 lg:block" />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

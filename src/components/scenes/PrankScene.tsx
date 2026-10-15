@@ -5,12 +5,12 @@ import { Art, Envelope, InkButton, SceneHeading, Tape } from "@/components/scrap
 
 /** Spots the gift label hops to, as fractions of the free space around the envelope. */
 const SPOTS = [
-  { x: 0.75, y: -0.35 },
-  { x: -0.8, y: 0.3 },
-  { x: 0.45, y: 0.55 },
-  { x: -0.7, y: -0.4 },
-  { x: 0.8, y: 0.25 },
-  { x: -0.4, y: 0.6 },
+  { x: 0.7, y: -0.3 },
+  { x: -0.75, y: 0.25 },
+  { x: 0.45, y: 0.5 },
+  { x: -0.65, y: -0.35 },
+  { x: 0.75, y: 0.2 },
+  { x: 0, y: 0 },
 ];
 
 export function PrankScene({ onNext }: { onNext: () => void }) {
@@ -26,8 +26,8 @@ export function PrankScene({ onNext }: { onNext: () => void }) {
     if (!canDodge || !arena.current || !btn.current) return false;
     const a = arena.current.getBoundingClientRect();
     const b = btn.current.getBoundingClientRect();
-    const maxX = Math.max(0, a.width / 2 - b.width / 2 - 8);
-    const maxY = Math.max(0, a.height / 2 - b.height / 2 - 8);
+    const maxX = Math.max(0, a.width / 2 - b.width / 2 - 12);
+    const maxY = Math.max(0, a.height / 2 - b.height / 2 - 12);
     const s = SPOTS[dodges % SPOTS.length]!;
     setPos({ x: s.x * maxX, y: s.y * maxY });
     setDodges((d) => d + 1);
@@ -35,8 +35,17 @@ export function PrankScene({ onNext }: { onNext: () => void }) {
   };
 
   const onClick = (e: MouseEvent) => {
-    // Keyboard activation (detail === 0) never dodges.
-    if (e.detail > 0 && dodge()) return;
+    // Keyboard activation (detail === 0) opens directly for accessibility.
+    if (e.detail === 0) {
+      setOpen(true);
+      return;
+    }
+    // If fewer than 6 dodges have occurred (such as mobile taps), dodge!
+    if (dodges < p.dodges) {
+      dodge();
+      return;
+    }
+    // Exactly 6 dodges completed, open the envelope!
     setOpen(true);
   };
 
@@ -87,7 +96,7 @@ export function PrankScene({ onNext }: { onNext: () => void }) {
                 onPointerEnter={(e) => e.pointerType === "mouse" && dodge()}
                 animate={{ x: pos.x, y: pos.y, rotate: dodges % 2 ? 4 : -3 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                className="pointer-events-auto min-h-11 bg-film px-5 py-2 font-hand text-2xl text-navy shadow-paper outline-none [clip-path:polygon(4%_0,100%_6%,97%_100%,0_92%)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+                className="pointer-events-auto min-h-11 cursor-pointer bg-film px-5 py-2 font-hand text-2xl text-navy shadow-paper outline-none [clip-path:polygon(4%_0,100%_6%,97%_100%,0_92%)] transition-transform hover:scale-105 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
                 aria-describedby="prank-hint"
               >
                 {p.cta}

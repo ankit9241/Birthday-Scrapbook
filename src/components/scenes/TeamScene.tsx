@@ -39,14 +39,28 @@ export function TeamScene() {
 
       <div className="relative">
         <SceneHeading>{t.heading}</SceneHeading>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="mt-5 max-w-md font-serif text-xl leading-relaxed text-ink"
-        >
-          {t.body}
-        </motion.p>
+        <div className="mt-5 max-w-md space-y-3 font-serif text-xl leading-relaxed text-ink">
+          {Array.isArray(t.body) ? (
+            t.body.map((paragraph, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + i * 0.2 }}
+              >
+                {paragraph}
+              </motion.p>
+            ))
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              {t.body}
+            </motion.p>
+          )}
+        </div>
         <div className="mt-8 flex flex-wrap gap-5">
           {t.notes.map((n, i) => (
             <motion.div
