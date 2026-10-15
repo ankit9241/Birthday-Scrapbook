@@ -1,0 +1,135 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Scrapbook palette */
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-ivory: var(--ivory);
+  --color-navy: var(--navy);
+  --color-slate: var(--slate);
+  --color-tape: var(--tape);
+  --color-ink: var(--ink);
+  --color-film: var(--film);
+
+  --font-script: "La Belle Aurore", "Caveat", cursive;
+  --font-hand: "Caveat", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Karla", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.25rem;
+  --paper: oklch(0.83 0.045 248);       /* #B6CEE5 */
+  --paper-soft: oklch(0.925 0.022 248); /* #DDE9F5 */
+  --ivory: oklch(0.94 0.02 80);         /* #F4EBDD */
+  --navy: oklch(0.38 0.11 266);         /* #263F79 */
+  --slate: oklch(0.58 0.035 238);       /* #6D8292 */
+  --tape: oklch(0.85 0.1 105 / 0.78);   /* #D9D38E */
+  --ink: oklch(0.25 0 0);               /* #242424 */
+  --film: oklch(0.985 0.004 90);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: var(--ivory);
+  --card-foreground: var(--ink);
+  --popover: var(--ivory);
+  --popover-foreground: var(--ink);
+  --primary: var(--navy);
+  --primary-foreground: var(--ivory);
+  --secondary: var(--paper-soft);
+  --secondary-foreground: var(--navy);
+  --muted: var(--paper-soft);
+  --muted-foreground: var(--slate);
+  --accent: var(--paper);
+  --accent-foreground: var(--navy);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--ivory);
+  --border: oklch(0.38 0.11 266 / 0.2);
+  --input: oklch(0.38 0.11 266 / 0.25);
+  --ring: var(--navy);
+
+  --shadow-paper: 0 1px 1px oklch(0.25 0.03 260 / 0.12), 0 6px 14px -6px oklch(0.25 0.05 260 / 0.28);
+  --shadow-lift: 0 2px 3px oklch(0.25 0.03 260 / 0.14), 0 22px 40px -14px oklch(0.25 0.05 260 / 0.4);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { overflow-x: hidden; }
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+@utility shadow-paper { box-shadow: var(--shadow-paper); }
+@utility shadow-lift { box-shadow: var(--shadow-lift); }
+
+/* Cream stationery sheet with faint fibres */
+@utility stationery {
+  background-color: var(--ivory);
+  background-image:
+    radial-gradient(circle at 20% 30%, oklch(1 0 0 / 0.5), transparent 40%),
+    radial-gradient(circle at 80% 70%, oklch(0.85 0.03 80 / 0.35), transparent 45%);
+  box-shadow: var(--shadow-paper);
+}
+
+/* Ruled letter lines */
+@utility ruled {
+  background-image: repeating-linear-gradient(
+    to bottom, transparent 0, transparent calc(2.1rem - 1px),
+    oklch(0.58 0.035 238 / 0.22) calc(2.1rem - 1px), oklch(0.58 0.035 238 / 0.22) 2.1rem
+  );
+  background-position: 0 0.35rem;
+}
+
+/* Scalloped top/bottom edge for stationery */
+@utility scallop {
+  --s: 14px;
+  mask:
+    radial-gradient(var(--s) at 50% var(--s), #000 97%, #0000) 50% calc(-1 * var(--s) / 2) / calc(2 * var(--s)) 100% repeat-x,
+    linear-gradient(#000 0 0) 0 calc(var(--s) / 2) / 100% calc(100% - var(--s)) no-repeat;
+}
+
+@utility washi {
+  background-color: var(--tape);
+  background-image: repeating-linear-gradient(90deg, oklch(1 0 0 / 0.12) 0 3px, transparent 3px 7px);
+  clip-path: polygon(2% 0, 98% 4%, 100% 50%, 97% 100%, 3% 96%, 0 50%);
+}
+
+@utility ink-link {
+  font-family: var(--font-hand);
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}

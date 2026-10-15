@@ -1,0 +1,1 @@
+- All scrapbook copy and photos live in src/content/birthday.ts; scenes in src/components/scenes read from it so content is editable in one place.
