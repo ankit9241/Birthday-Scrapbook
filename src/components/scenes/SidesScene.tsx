@@ -3,8 +3,6 @@ import { useState } from "react";
 import { birthday } from "@/content/birthday";
 import { Art, PhotoFill, SceneHeading, Tape } from "@/components/scrapbook/Decor";
 import { cn } from "@/lib/utils";
-
-// Organic desktop positions (percent of collage box) + rotation
 const LAYOUT = [
   { left: "2%", top: "10%", rot: -7, w: "lg:w-[23%]" },
   { left: "22%", top: "38%", rot: 4, w: "lg:w-[21%]" },

@@ -27,7 +27,6 @@ export function Art({ kind, className, style }: { kind: keyof typeof ART; classN
   );
 }
 
-/** Image or a clearly-marked replaceable placeholder. */
 export function PhotoFill({ photo, className }: { photo: Photo; className?: string }) {
   if (photo.src) {
     return <img src={photo.src} alt={photo.alt} className={cn("h-full w-full object-cover", className)} />;
@@ -74,7 +73,6 @@ function PolaroidFrame({ photo, caption, rotate = 0, className, tape = "top", as
   );
 }
 
-/** Taped Polaroid. Click / tap / Enter opens an enlarged view with its memory caption. */
 export function Polaroid(props: PolaroidProps) {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLDivElement>(null);
@@ -169,7 +167,6 @@ export function Polaroid(props: PolaroidProps) {
   );
 }
 
-/** Cream paper envelope with a flap that opens. Optional insert rises out of it. */
 export function Envelope({
   open,
   children,

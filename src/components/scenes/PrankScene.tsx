@@ -2,8 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRef, useState, type MouseEvent } from "react";
 import { birthday } from "@/content/birthday";
 import { Art, Envelope, InkButton, SceneHeading, Tape } from "@/components/scrapbook/Decor";
-
-/** Spots the gift label hops to, as fractions of the free space around the envelope. */
 const SPOTS = [
   { x: 0.7, y: -0.3 },
   { x: -0.75, y: 0.25 },

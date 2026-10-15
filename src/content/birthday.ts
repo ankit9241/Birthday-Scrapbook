@@ -1,10 +1,14 @@
-/**
- * Central content for Anshika's birthday scrapbook.
- * To add real photos: drop files into src/assets/photos/, import them here,
- * and set `src` on the matching entry. Entries without `src` show a marked placeholder.
- */
+import baseraImg from "@/assets/photos/basera.jpg";
+import basera1Img from "@/assets/photos/basera-1.jpg";
+import basera2Img from "@/assets/photos/basera-2.jpg";
+import roseImg from "@/assets/photos/rose.jpg";
+import rose2Img from "@/assets/photos/rose-2.jpg";
+import selfieImg from "@/assets/photos/selfie.jpg";
+import selfie2Img from "@/assets/photos/selfie-2.jpg";
+import mirrorImg from "@/assets/photos/mirror.jpg";
+import birthdayImg from "@/assets/photos/birthday.jpg";
+import birthday1Img from "@/assets/photos/birthday-1.jpg";
 
-/** `memory` is the handwritten caption shown when the photo is opened. */
 export type Photo = { src?: string; alt: string; label?: string; memory?: string };
 
 export const birthday = {
@@ -27,17 +31,17 @@ export const birthday = {
       "Toh relax, enjoy the little surprises, and don't judge the amount of effort that went into this.",
       "(Okay, maybe judge a little.)",
     ],
-    photo: { alt: "Anshika", label: "the birthday girl", memory: "The birthday girl herself." } as Photo,
+    photo: { src: birthdayImg, alt: "Anshika", label: "the birthday girl", memory: "The birthday girl herself." } as Photo,
   },
 
   sides: {
     heading: "A few things that make you, you.",
     items: [
-      { caption: "The Smile", line: "Okay, fine. This one deserves its own spot.", photo: { alt: "The Smile" } as Photo },
-      { caption: "The Chaos", line: "Because apparently, normal is a little too boring.", photo: { alt: "The Chaos" } as Photo },
-      { caption: "The Sunshine", line: "Being effortlessly photogenic is a bit unfair, honestly.", photo: { alt: "The Sunshine" } as Photo },
-      { caption: "The Strong One", line: "Handling life like a pro. Complaining about it is optional.", photo: { alt: "The Strong One" } as Photo },
-      { caption: "The Original", line: "One of one. No duplicates available.", photo: { alt: "The Original" } as Photo },
+      { caption: "The Smile", line: "Okay, fine. This one deserves its own spot.", photo: { src: selfieImg, alt: "The Smile", memory: "The Smile — Okay, fine. This one deserves its own spot." } as Photo },
+      { caption: "The Chaos", line: "Because apparently, normal is a little too boring.", photo: { src: mirrorImg, alt: "The Chaos", memory: "The Chaos — Because apparently, normal is a little too boring." } as Photo },
+      { caption: "The Sunshine", line: "Being effortlessly photogenic is a bit unfair, honestly.", photo: { src: roseImg, alt: "The Sunshine", memory: "The Sunshine — Being effortlessly photogenic is a bit unfair, honestly." } as Photo },
+      { caption: "The Strong One", line: "Handling life like a pro. Complaining about it is optional.", photo: { src: selfie2Img, alt: "The Strong One", memory: "The Strong One — Handling life like a pro." } as Photo },
+      { caption: "The Original", line: "One of one. No duplicates available.", photo: { src: birthday1Img, alt: "The Original", memory: "The Original — One of one. No duplicates available." } as Photo },
     ],
   },
 
@@ -48,8 +52,11 @@ export const birthday = {
       "And somewhere between all that, we actually get things done. Miracles happen.",
     ],
     notes: ["Work mode: allegedly ON", "One quick discussion = 45 minutes", "Somehow, we get things done."],
-    main: { alt: "The Basera group", label: "team photo", memory: "The Basera gang, somehow all in one frame." } as Photo,
-    extras: [{ alt: "Anshika", label: "portrait" }, { alt: "Video call", label: "screenshot" }] as Photo[],
+    main: { src: baseraImg, alt: "The Basera group", label: "team photo", memory: "The Basera gang, somehow all in one frame." } as Photo,
+    extras: [
+      { src: basera2Img, alt: "Anshika", label: "portrait", memory: "A good memory with the team." },
+      { src: basera1Img, alt: "Video call", label: "screenshot", memory: "Different screens, same madness." },
+    ] as Photo[],
   },
 
   note: {
@@ -65,12 +72,12 @@ export const birthday = {
       "Here's to a year full of good surprises, happy moments, and things that make you genuinely excited. Hope you have the best birthday — you deserve it!",
     ],
     signature: "— Ankit",
-    photo: { alt: "Anshika", label: "small photo" } as Photo,
+    photo: { src: rose2Img, alt: "Anshika", label: "for Anshika", memory: "A special moment, penned straight from the heart." } as Photo,
   },
 
   wishes: {
     heading: "Things we're wishing for you.",
-    photo: { alt: "Anshika", label: "centre photo" } as Photo,
+    photo: { src: birthdayImg, alt: "Anshika", label: "centre photo", memory: "Wishing you the happiest year ahead, Anshika!" } as Photo,
     items: [
       { title: "More happy days", line: "I hope you find happiness in the little things, get more reasons to laugh, and have people around who make even an ordinary day feel special." },
       { title: "More adventures", line: "More places to explore, more new things to try, and more stories that start with ‘Okay, so guess what happened…’" },
@@ -116,7 +123,7 @@ export const birthday = {
     tab: "P.S. Who put all this together?",
     reveal: ["A little something by Ankit.", "Hope this made you smile. Have a wonderful birthday!"],
     signature: "— Ankit",
-    photo: { alt: "Anshika", label: "memories" } as Photo,
-    photos: [{ alt: "Anshika", label: "memories" }] as Photo[],
+    photo: { src: birthday1Img, alt: "Anshika", label: "memories", memory: "Happy Birthday once again, Anshika!" } as Photo,
+    photos: [{ src: birthday1Img, alt: "Anshika", label: "memories" }] as Photo[],
   },
 };
