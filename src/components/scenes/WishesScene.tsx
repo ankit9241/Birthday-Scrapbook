@@ -37,7 +37,7 @@ function Note({ i, title, line }: { i: number; title: string; line: string }) {
       >
         <div
           className={cn(
-            "absolute inset-0 flex flex-col items-center justify-between p-5 pb-4 shadow-paper transition-shadow group-hover:shadow-lift [backface-visibility:hidden] border border-navy/15 rounded-sm",
+            "absolute inset-0 flex flex-col items-center justify-between p-5 pb-4 shadow-paper [backface-visibility:hidden] border border-navy/15 rounded-sm",
             s.paper,
             s.shape,
           )}
@@ -46,7 +46,7 @@ function Note({ i, title, line }: { i: number; title: string; line: string }) {
           <span className="font-script text-3xl sm:text-4xl text-navy pt-2 text-center leading-tight">
             {title}
           </span>
-          <span className="inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-3.5 py-1 font-sans text-xs font-semibold tracking-wider text-navy shadow-xs border border-navy/20 group-hover:border-navy/40 group-hover:scale-105 transition-all">
+          <span className="inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-3.5 py-1 font-sans text-xs font-semibold tracking-wider text-navy border border-navy/25 group-hover:border-navy/50 group-hover:scale-105 transition-all">
             tap to unfold
           </span>
         </div>
@@ -92,7 +92,7 @@ function PaperFlap({ i, label, message }: { i: number; label: string; message: s
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label={open ? `Fold ${label} back` : `Unfold: ${label}`}
-        className="absolute inset-x-0 top-0 z-10 flex h-full origin-top cursor-pointer flex-col items-center justify-between bg-paper-soft px-4 py-5 shadow-paper outline-none transition-shadow group-hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy border border-navy/15"
+        className="absolute inset-x-0 top-0 z-10 flex h-full origin-top cursor-pointer flex-col items-center justify-between bg-paper-soft px-4 py-5 shadow-paper outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy border border-navy/15"
         initial={false}
         animate={{ rotateX: open ? 72 : 0, opacity: open ? 0.92 : 1, height: open ? "2.5rem" : "100%" }}
         transition={{ duration: 0.55, ease: [0.3, 0.8, 0.3, 1] }}
@@ -101,7 +101,7 @@ function PaperFlap({ i, label, message }: { i: number; label: string; message: s
         {!open && (
           <>
             <span className="font-hand text-2xl leading-tight text-navy pt-2">{label}</span>
-            <span className="mt-2.5 inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-3.5 py-1 font-sans text-xs font-semibold tracking-wider text-navy shadow-xs border border-navy/20 group-hover:border-navy/40 group-hover:scale-105 transition-all">
+            <span className="mt-2.5 inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-3.5 py-1 font-sans text-xs font-semibold tracking-wider text-navy border border-navy/25 group-hover:border-navy/50 group-hover:scale-105 transition-all">
               lift the flap
             </span>
           </>

@@ -104,7 +104,7 @@ export function NoteScene() {
                   e.stopPropagation();
                   setShowIntro(false);
                 }}
-                className="mt-8 inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-6 py-2 font-sans text-xs font-semibold tracking-widest uppercase text-navy shadow-xs border border-navy/25 hover:border-navy/50 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                className="mt-8 inline-flex items-center rounded-full bg-paper-soft hover:bg-ivory px-6 py-2 font-sans text-xs font-semibold tracking-widest uppercase text-navy border border-navy/25 hover:border-navy/50 hover:scale-105 active:scale-95 transition-all cursor-pointer"
               >
                 read note
               </motion.button>

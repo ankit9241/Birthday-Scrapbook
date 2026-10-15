@@ -252,13 +252,13 @@ export function InkButton({ children, onClick, className }: { children: ReactNod
       type="button"
       onClick={onClick}
       className={cn(
-        "group relative inline-flex min-h-11 cursor-pointer items-center justify-center px-6 py-2.5 font-sans text-xs font-bold uppercase tracking-[0.25em] text-navy transition-all duration-200 hover:scale-105 active:scale-95 hover:shadow-paper focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy",
+        "group relative inline-flex min-h-11 cursor-pointer items-center justify-center px-6 py-2.5 font-sans text-xs font-bold uppercase tracking-[0.25em] text-navy transition-all duration-200 hover:scale-105 hover:-rotate-1 active:scale-95 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy",
         className,
       )}
     >
       <span className="relative z-10 transition-transform group-hover:-translate-y-0.5">{children}</span>
-      <svg viewBox="0 0 200 50" preserveAspectRatio="none" className="absolute inset-0 h-full w-full text-navy transition-all duration-200 group-hover:drop-shadow-xs" aria-hidden>
-        <path d="M6 26 C 8 8, 60 4, 104 6 S 196 10, 194 26 S 140 46, 96 45 S 4 42, 6 26" fill="oklch(0.38 0.11 266 / 0.06)" className="transition-colors group-hover:fill-navy/15" stroke="currentColor" strokeWidth="1.6" />
+      <svg viewBox="0 0 200 50" preserveAspectRatio="none" className="absolute inset-0 h-full w-full text-navy" aria-hidden>
+        <path d="M6 26 C 8 8, 60 4, 104 6 S 196 10, 194 26 S 140 46, 96 45 S 4 42, 6 26" fill="none" stroke="currentColor" strokeWidth="1.6" />
       </svg>
     </button>
   );

@@ -54,7 +54,7 @@ export function FinalScene({ onReplay, onMemories }: { onReplay: () => void; onM
             type="button"
             onClick={() => setRevealed((r) => !r)}
             aria-expanded={revealed}
-            className="group relative min-h-12 cursor-pointer rotate-[-1.5deg] rounded-md border border-navy/25 bg-paper-soft hover:bg-ivory px-5 py-2.5 font-hand text-2xl sm:text-3xl text-navy shadow-paper transition-all hover:scale-105 hover:shadow-lift hover:border-navy/50 active:scale-95 flex items-center gap-3 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+            className="group relative min-h-12 cursor-pointer rotate-[-1.5deg] rounded-md border border-navy/25 bg-paper-soft hover:bg-ivory px-5 py-2.5 font-hand text-2xl sm:text-3xl text-navy transition-all hover:scale-105 hover:border-navy/50 active:scale-95 flex items-center gap-3 outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
           >
             <Tape className="-top-3 left-4 w-12 -rotate-6 z-10" />
             <span>{f.tab}</span>
@@ -63,7 +63,7 @@ export function FinalScene({ onReplay, onMemories }: { onReplay: () => void; onM
                 "inline-flex items-center rounded-full px-3 py-0.5 font-sans text-xs font-semibold uppercase tracking-wider transition-all",
                 revealed
                   ? "bg-navy/10 text-navy"
-                  : "bg-ivory text-navy shadow-xs border border-navy/20 group-hover:scale-105",
+                  : "bg-ivory text-navy border border-navy/20 group-hover:scale-105",
               )}
             >
               {revealed ? "close" : "tap to open"}
