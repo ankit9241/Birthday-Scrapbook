@@ -4,8 +4,10 @@ import basera2Img from "@/assets/photos/basera-2.jpg";
 import roseImg from "@/assets/photos/rose.jpg";
 import rose2Img from "@/assets/photos/rose-2.jpg";
 import selfieImg from "@/assets/photos/selfie.jpg";
+import sunshineImg from "@/assets/photos/sunshine.png";
 import selfie2Img from "@/assets/photos/selfie-2.jpg";
 import mirrorImg from "@/assets/photos/mirror.jpg";
+import flowerImg from "@/assets/photos/flower.png";
 import birthdayImg from "@/assets/photos/birthday.jpg";
 import birthday1Img from "@/assets/photos/birthday-1.jpg";
 
@@ -37,9 +39,9 @@ export const birthday = {
   sides: {
     heading: "A few things that make you, you.",
     items: [
-      { caption: "The Smile", line: "Okay, fine. This one deserves its own spot.", photo: { src: selfieImg, alt: "The Smile", memory: "The Smile — Okay, fine. This one deserves its own spot." } as Photo },
-      { caption: "The Chaos", line: "Because apparently, normal is a little too boring.", photo: { src: mirrorImg, alt: "The Chaos", memory: "The Chaos — Because apparently, normal is a little too boring." } as Photo },
-      { caption: "The Sunshine", line: "Being effortlessly photogenic is a bit unfair, honestly.", photo: { src: roseImg, alt: "The Sunshine", memory: "The Sunshine — Being effortlessly photogenic is a bit unfair, honestly." } as Photo },
+      { caption: "The Smile", line: "Okay, fine. This one deserves its own spot.", photo: { src: flowerImg, alt: "The Smile", memory: "The Smile — Okay, fine. This one deserves its own spot." } as Photo },
+      { caption: "The Chaos", line: "Because apparently, normal is a little too boring.", photo: { src: selfieImg, alt: "The Chaos", memory: "The Chaos — Because apparently, normal is a little too boring." } as Photo },
+      { caption: "The Sunshine", line: "Being effortlessly photogenic is a bit unfair, honestly.", photo: { src: sunshineImg, alt: "The Sunshine", memory: "The Sunshine — Being effortlessly photogenic is a bit unfair, honestly." } as Photo },
       { caption: "The Strong One", line: "Handling life like a pro. Complaining about it is optional.", photo: { src: selfie2Img, alt: "The Strong One", memory: "The Strong One — Handling life like a pro." } as Photo },
       { caption: "The Original", line: "One of one. No duplicates available.", photo: { src: birthday1Img, alt: "The Original", memory: "The Original — One of one. No duplicates available." } as Photo },
     ],
