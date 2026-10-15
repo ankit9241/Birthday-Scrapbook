@@ -11,12 +11,20 @@ export default defineConfig(({ command }) => ({
     tailwindcss(),
     tanstackStart({
       server: { entry: "server" },
+      prerender: {
+        routes: ["/"],
+      },
     }),
     react(),
     ...(command === "build"
       ? [
           nitro({
-            defaultPreset: "cloudflare-module",
+            preset: "netlify",
+            output: {
+              dir: "dist",
+              serverDir: "dist/server",
+              publicDir: "dist/client",
+            },
           }),
         ]
       : []),
